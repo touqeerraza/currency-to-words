@@ -1,9 +1,8 @@
 {
   "name": "currency-to-words-util",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Convert currency amounts to words for various currencies",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "index.ts",
   "scripts": {
     "build": "tsc",
     "test": "jest"
@@ -11,6 +10,13 @@
   "keywords": ["currency", "convert", "words", "typescript", "money"],
   "author": "Touqeer",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/touqeerraza/currency-to-words.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/currency-to-words/issues"
+  },
   "dependencies": {},
   "devDependencies": {
     "typescript": "^5.0.0",
