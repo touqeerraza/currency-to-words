@@ -1,0 +1,19 @@
+{
+  "name": "currency-to-words",
+  "version": "1.0.0",
+  "description": "Convert currency amounts to words for various currencies",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "keywords": ["currency", "convert", "words", "typescript", "money"],
+  "author": "Touqeer",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "jest": "^29.0.0"
+  }
+}
