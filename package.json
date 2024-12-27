@@ -1,6 +1,6 @@
 {
   "name": "currency-to-words-util",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Convert currency amounts to words for various currencies",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
