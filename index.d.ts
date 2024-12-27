@@ -3,22 +3,22 @@ export type CurrencyConfig = {
    * Singular form of the currency
    * @example Dollar
    */
-  singular: string;
+  singular?: string;
   /**
    * Plural form of the currency
    * @example Dollars
    */
-  plural: string;
+  plural?: string;
   /**
    * Singular form of the subunit
    * @example Cent
    */
-  subunitSingular: string;
+  subunitSingular?: string;
   /**
    * Plural form of the subunit
    * @example Cents
    */
-  subunitPlural: string;
+  subunitPlural?: string;
 };
 
 export interface CurrencyToWordsProps {
@@ -26,7 +26,7 @@ export interface CurrencyToWordsProps {
    * Value you want to convert in words
    * @example 12303 into  'TWELVE THOUSAND THREE HUNDRED AND THREE DOLLARS'
    */
-  value?: number;
+  value: number;
   /**
    * suffix you want to add after the currency name in return statement
    * @example 'TWELVE THOUSAND THREE HUNDRED AND THREE DOLLARS ONLY'
@@ -36,7 +36,7 @@ export interface CurrencyToWordsProps {
   /**
    * This is to describe your currency
    */
-  currencyConfig: CurrencyConfig;
+  currencyConfig?: CurrencyConfig;
 }
 
 export function currencyToWords(

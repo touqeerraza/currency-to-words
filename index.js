@@ -1,18 +1,26 @@
 exports.currencyToWords = ({ value, suffix = "ONLY", currencyConfig }) => {
-  if (!value) return undefined;
   const fraction = Math.round(frac(value) * 100);
   let fractionText = "";
 
   const { singular, plural, subunitSingular, subunitPlural } = currencyConfig;
 
-  const mainUnit = value === 1 ? singular : plural;
+  const mainUnit = value === 1 ? singular ?? "" : plural ?? "";
 
   if (fraction > 0) {
-    const subunit = fraction === 1 ? subunitSingular : subunitPlural;
-    fractionText = ` AND ${convertNumber(fraction)} ${subunit}`;
+    const subunit =
+      fraction === 1 ? subunitSingular ?? "" : subunitPlural ?? "";
+    if (subunit) {
+      fractionText = ` AND ${convertNumber(fraction)} ${subunit}`;
+    } else {
+      fractionText = ` AND ${convertNumber(fraction)}`;
+    }
   }
-
-  const words = `${convertNumber(value)} ${mainUnit}${fractionText}`;
+  let words = "";
+  if (mainUnit) {
+    words = `${convertNumber(value)} ${mainUnit}${fractionText}`;
+  } else {
+    words = `${convertNumber(value)}${fractionText}`;
+  }
   return suffix ? `${words} ${suffix === true ? "ONLY" : suffix}` : words;
 };
 

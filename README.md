@@ -48,8 +48,8 @@ console.log(result);
 
 | Parameter       | Type                          | Default                          | Description                                                                 |
 |-----------------|-------------------------------|----------------------------------|-----------------------------------------------------------------------------|
-| `value`         | `number` (optional)           | `undefined`                      | The amount to convert into words.                                           |
-| `suffix`        | `string | boolean` (optional)  | `"ONLY"`                         | The suffix to add at the end of the result (e.g., `"ONLY"` or `true`).      |
+| `value`         | `number`           | `undefined`                      | The amount to convert into words.                                           |
+| `suffix`        | `string , boolean` (optional)  | `"ONLY"`                         | The suffix to add at the end of the result (e.g., `"ONLY"`).      |
 | `currencyConfig`| `CurrencyConfig` (optional)  | `{ mainUnit: "RUPEE", subUnit: "PAISA" }` | Configuration for the main and subunits of the currency.                   |
 
 #### **CurrencyConfig**
