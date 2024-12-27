@@ -1,19 +1,4 @@
-type CurrencyConfig = {
-  singular: string; // Singular form of the currency (e.g., Dollar, Euro)
-  plural: string; // Plural form of the currency (e.g., Dollars, Euros)
-  subunitSingular: string; // Singular form of the subunit (e.g., Cent, Pence)
-  subunitPlural: string; // Plural form of the subunit (e.g., Cents, Pence)
-};
-
-export default function currencyToWords({
-  value,
-  suffix = "ONLY",
-  currencyConfig,
-}: {
-  value?: number;
-  suffix?: string | boolean;
-  currencyConfig: CurrencyConfig;
-}): string | undefined {
+exports.currencyToWords = ({ value, suffix = "ONLY", currencyConfig }) => {
   if (!value) return undefined;
   const fraction = Math.round(frac(value) * 100);
   let fractionText = "";
@@ -29,13 +14,13 @@ export default function currencyToWords({
 
   const words = `${convertNumber(value)} ${mainUnit}${fractionText}`;
   return suffix ? `${words} ${suffix === true ? "ONLY" : suffix}` : words;
-}
+};
 
-function frac(f: number): number {
+function frac(f) {
   return f % 1;
 }
 
-function convertNumber(number: number): string {
+function convertNumber(number) {
   if (number < 0 || number > 999999999) {
     return "NUMBER OUT OF RANGE!";
   }
