@@ -16,12 +16,17 @@ exports.currencyToWords = ({ value, suffix = "ONLY", currencyConfig }) => {
     }
   }
   let words = "";
-  if (mainUnit) {
-    words = `${convertNumber(value)} ${mainUnit}${fractionText}`;
+  const convertedValue = convertNumber(value);
+  if (convertedValue !== "NUMBER OUT OF RANGE!") {
+    if (mainUnit) {
+      words = `${convertedValue} ${mainUnit}${fractionText}`;
+    } else {
+      words = `${convertedValue}${fractionText}`;
+    }
+    return suffix ? `${words} ${suffix === true ? "ONLY" : suffix}` : words;
   } else {
-    words = `${convertNumber(value)}${fractionText}`;
+    return convertedValue;
   }
-  return suffix ? `${words} ${suffix === true ? "ONLY" : suffix}` : words;
 };
 
 function frac(f) {
