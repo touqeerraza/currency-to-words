@@ -1,4 +1,9 @@
-exports.currencyToWords = ({ value, suffix = "ONLY", currencyConfig }) => {
+exports.currencyToWords = ({
+  value,
+  suffix = "ONLY",
+  currencyConfig,
+  showError = true,
+}) => {
   const fraction = Math.round(frac(value) * 100);
   let fractionText = "";
 
@@ -25,7 +30,7 @@ exports.currencyToWords = ({ value, suffix = "ONLY", currencyConfig }) => {
     }
     return suffix ? `${words} ${suffix === true ? "ONLY" : suffix}` : words;
   } else {
-    return convertedValue;
+    return undefined;
   }
 };
 

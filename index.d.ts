@@ -34,6 +34,11 @@ export interface CurrencyToWordsProps {
    */
   suffix?: string | boolean;
   /**
+   * return error if value is out of range
+   * @default true
+   */
+  showError?: boolean;
+  /**
    * This is to describe your currency
    */
   currencyConfig?: CurrencyConfig;

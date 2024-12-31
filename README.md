@@ -50,6 +50,7 @@ console.log(result);
 |-----------------|-------------------------------|----------------------------------|-----------------------------------------------------------------------------|
 | `value`         | `number`           | `undefined`                      | The amount to convert into words.                                           |
 | `suffix`        | `string , boolean` (optional)  | `"ONLY"`                         | The suffix to add at the end of the result (e.g., `"ONLY"`).      |
+| `showError`        | `boolean` (optional)  | `true`                         | showError is the check to return the message (`Not in Range`) if number is out of range.      |
 | `currencyConfig`| `CurrencyConfig` (optional)  | `{ mainUnit: "RUPEE", subUnit: "PAISA" }` | Configuration for the main and subunits of the currency.                   |
 
 #### **CurrencyConfig**
